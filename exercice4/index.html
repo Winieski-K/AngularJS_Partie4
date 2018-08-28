@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr" ng-app="myApp" ng-controller="myController">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercice 4</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+  <h1>Voitures : </h1>
+  <ul>
+     <li ng-repeat="show in voiture"  ng-if="show.couleur != 'verte'"> <!--filter : {couleur : '!verte'} -->
+      {{show.marque + ' ' + show.couleur}}
+    </li>
+  </ul>
+  <script>
+  // Controller, permet de récupérer les éléments du fichier json
+  var myApp = angular.module("myApp", []);
+  myApp.controller("myController", function($scope, $http) {
+    $http.get('assets/js/voiture.json').then(function(resultat) {
+      $scope.voiture = resultat.data;
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr" ng-app="myApp" ng-controller="myController">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercice 5</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+  <button type="button" name="button" ng-click="show()">Afficher</button>
+  <button type="button" name="button" ng-click="hide()">Cacher</button>
+  <p ng-show="boolText"> {{text}} </p>
+  <script>
+  // Controller, permet de récupérer les éléments du fichier json
+  var myApp = angular.module("myApp", []);
+  myApp.controller("myController", function($scope, $http) {
+    // Boolean déterminant l'état du texte (caché ou visible)
+    $scope.boolText = false;
+    $scope.text = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    // Fonction permettant de cacher le texte
+    $scope.show = function(){
+      $scope.boolText = true;
+    }
+    // Fonction permettant d'afficher le texte
+    $scope.hide = function(){
+      $scope.boolText = false;
+    }
+  });
+</script>
+</body>
+</html>

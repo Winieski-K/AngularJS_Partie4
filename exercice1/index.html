@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Exercice 1</title>
+  </head>
+  <body>
+    <!-- Initialise le compteur (counter) à 10 -->
+    <form ng-app ng-init ="counter = 10">
+      <!-- Incrémente la variable counter de 1 -->
+      <button type="button" name="button" ng-click="counter = counter + 1">+</button>
+      <!-- Décrémente la variable counter de 1 -->
+      <button type="button" name="button" ng-click="counter = counter - 1">-</button>
+      <!-- Affiche la valeur de la variable counter -->
+      <p>{{counter}}</p>
+    </form>
+  </body>
+</html>
